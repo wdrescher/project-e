@@ -1,6 +1,10 @@
 project-e
 =========
 
+## Get setup locally: 
+Install pgadmin, nodejs
+https://cookiecutter-django.readthedocs.io/en/latest/developing-locally.html#setting-up-development-environment
+
 MVP
 
 .. image:: https://img.shields.io/badge/built%20with-Cookiecutter%20Django-ff69b4.svg
