@@ -1,7 +1,8 @@
 project-e
 =========
 
-## Get setup locally: 
+Get setup locally: 
+--------------------
 Install pgadmin, nodejs
 https://cookiecutter-django.readthedocs.io/en/latest/developing-locally.html#setting-up-development-environment
 
