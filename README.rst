@@ -11,9 +11,10 @@ https://cookiecutter-django.readthedocs.io/en/latest/developing-locally.html#set
 
 Running projcet
 --------
-```
-Build using npm run dev
-```
+
+Build using 
+   ``npm run dev``
+
 
 Basic Commands
 --------------
