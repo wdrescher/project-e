@@ -19,12 +19,10 @@ MVP
 :License: Apache Software License 2.0
 
 
-Settings
+Setup
 --------
 
-Moved to settings_.
-
-.. _settings: http://cookiecutter-django.readthedocs.io/en/latest/settings.html
+Build using npm run dev
 
 Basic Commands
 --------------
