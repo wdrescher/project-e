@@ -6,23 +6,14 @@ Get setup locally:
 Install pgadmin, nodejs
 https://cookiecutter-django.readthedocs.io/en/latest/developing-locally.html#setting-up-development-environment
 
-MVP
-
-.. image:: https://img.shields.io/badge/built%20with-Cookiecutter%20Django-ff69b4.svg
-     :target: https://github.com/pydanny/cookiecutter-django/
-     :alt: Built with Cookiecutter Django
-.. image:: https://img.shields.io/badge/code%20style-black-000000.svg
-     :target: https://github.com/ambv/black
-     :alt: Black code style
-
-
 :License: Apache Software License 2.0
 
 
-Setup
+Running projcet
 --------
-
+```
 Build using npm run dev
+```
 
 Basic Commands
 --------------
