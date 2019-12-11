@@ -38,3 +38,40 @@ $red: #b94a48;
   width: 80%; 
   flex-flow: row wrap; 
 }
+
+.form {
+  display: flex; 
+  flex-flow: column wrap; 
+
+  &-header {
+    align-content: flex-start;
+    font-size: 32px; 
+    margin-bottom: 20px; 
+  }
+
+  &-message {
+    margin: auto; 
+    align-content: center;
+    justify-content: center;
+  }
+
+  &-container {
+    padding: 30px; 
+    margin: 20px auto; 
+    display: flex; 
+    flex-flow: column wrap; 
+    width: 80%; 
+    align-content: center;
+    border-radius: 20px;
+    background-color: #f2f2f2; 
+    box-shadow: 0 2px 3px #d3d3d3;  
+  }
+}
+
+form {
+  width: 100%; 
+}
+
+ul {
+  margin: .5rem; 
+}
