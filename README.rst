@@ -14,7 +14,9 @@ $ python3.7 -m venv ./env
 $ pip install -r requirements/local.txt
 
 $ createdb project-e -U postgres --password <password>
-``
+
+$ export DATABASE_URL=postgres://postgres:<password>@127.0.0.1:5432/project-e
+
 
 
 
