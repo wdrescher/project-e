@@ -6,7 +6,19 @@ Get setup locally:
 Install 
  - pgadmin 
  - nodejs
- - https://cookiecutter-django.readthedocs.io/en/latest/developing-locally.html#setting-up-development-environment
+ - python3.7
+
+
+$ python3.7 -m venv ./env
+
+$ pip install -r requirements/local.txt
+
+$ createdb project-e -U postgres --password <password>
+``
+
+
+
+- https://cookiecutter-django.readthedocs.io/en/latest/developing-locally.html#setting-up-development-environment
 
 :License: Apache Software License 2.0
 
