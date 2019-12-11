@@ -1,25 +1,35 @@
 project-e
 =========
 
-MVP
+Get setup locally: 
+--------------------
+Install 
+ - pgadmin 
+ - nodejs
+ - python3.7
 
-.. image:: https://img.shields.io/badge/built%20with-Cookiecutter%20Django-ff69b4.svg
-     :target: https://github.com/pydanny/cookiecutter-django/
-     :alt: Built with Cookiecutter Django
-.. image:: https://img.shields.io/badge/code%20style-black-000000.svg
-     :target: https://github.com/ambv/black
-     :alt: Black code style
 
+$ python3.7 -m venv ./env
+
+$ pip install -r requirements/local.txt
+
+$ createdb project-e -U postgres --password <password>
+
+$ export DATABASE_URL=postgres://postgres:<password>@127.0.0.1:5432/project-e
+
+
+
+
+- https://cookiecutter-django.readthedocs.io/en/latest/developing-locally.html#setting-up-development-environment
 
 :License: Apache Software License 2.0
 
 
-Settings
+Running projcet
 --------
+Build using 
+   ``npm run dev``
 
-Moved to settings_.
-
-.. _settings: http://cookiecutter-django.readthedocs.io/en/latest/settings.html
 
 Basic Commands
 --------------
