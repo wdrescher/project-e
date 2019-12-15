@@ -17,7 +17,9 @@ $ createdb project-e -U postgres --password <password>
 
 $ export DATABASE_URL=postgres://postgres:<password>@127.0.0.1:5432/project-e
 
+$ python manage.py migrate
 
+$ python manage.py runserver
 
 
 - https://cookiecutter-django.readthedocs.io/en/latest/developing-locally.html#setting-up-development-environment
