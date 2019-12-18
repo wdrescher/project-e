@@ -39,13 +39,21 @@ $red: #b94a48;
   flex-flow: row wrap; 
 }
 
-.form {
-  display: flex; 
-  flex-flow: column wrap; 
-
+.page { 
   &-header {
     align-content: flex-start;
     font-size: 32px; 
+  }
+}
+
+.form {
+  display: flex; 
+  flex-flow: column wrap; 
+  align-content: center;
+
+  &-header {
+    align-content: flex-start;
+    font-size: 20px; 
     margin-bottom: 20px; 
   }
 
@@ -60,6 +68,7 @@ $red: #b94a48;
     margin: 20px auto; 
     display: flex; 
     flex-flow: column wrap; 
+    max-width: 1000px; 
     width: 80%; 
     align-content: center;
     border-radius: 20px;

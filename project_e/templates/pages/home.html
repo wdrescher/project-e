@@ -1,1 +1,7 @@
 {% extends "base.html" %}
+{% load static %}
+
+{% block title %} Create dealer {% endblock title %}
+{% block content %}
+<a href="{% url 'dealers:create' %}">Add your dealership to our network</a>
+{% endblock content %}

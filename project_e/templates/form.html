@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}{% block head_title %}{% endblock head_title %}{% endblock title %}
+
+{% block inner %} {% endblock inner%}
+
+{% block content %}
+<div class="base-content">
+    <div class="page-header"> {% block page_header %} {% endblock page_header %} </div>
+    <div class="form-container"> 
+        <h2 class="form-header">{% block form_header %} {% endblock form_header %}</h2>
+        <p class="form-message">{% block form_message %}{% endblock form_message %}</p>
+        {% block form %}
+            {% block actions%} {% endblock actions %}
+        {% endblock form %}
+    </div> 
+    {% block footer_message %}
+    {% endblock footer_message %}   
+</div>
+{% endblock content %}

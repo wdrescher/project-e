@@ -19,6 +19,11 @@
       -ms-flex-flow: row wrap;
           flex-flow: row wrap; }
 
+.page-header {
+  -ms-flex-line-pack: start;
+      align-content: flex-start;
+  font-size: 32px; }
+
 .form {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -26,11 +31,13 @@
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-flow: column wrap;
-          flex-flow: column wrap; }
+          flex-flow: column wrap;
+  -ms-flex-line-pack: center;
+      align-content: center; }
   .form-header {
     -ms-flex-line-pack: start;
         align-content: flex-start;
-    font-size: 32px;
+    font-size: 20px;
     margin-bottom: 20px; }
   .form-message {
     margin: auto;
@@ -49,6 +56,7 @@
     -webkit-box-direction: normal;
         -ms-flex-flow: column wrap;
             flex-flow: column wrap;
+    max-width: 1000px;
     width: 80%;
     -ms-flex-line-pack: center;
         align-content: center;
