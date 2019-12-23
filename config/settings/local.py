@@ -10,6 +10,7 @@ SECRET_KEY = env(
     "DJANGO_SECRET_KEY",
     default="VRPbYeBQhsSWzUumBmZE1i5fCJeMTOIlxDxlkiPgn3xWg5L81xypWhnCJd7I8Fz2",
 )
+HASHID_FIELD_SALT = env("DJANGO_HASH_SALT", default="effortlesselectricisaprettybigword")
 # https://docs.djangoproject.com/en/dev/ref/settings/#allowed-hosts
 ALLOWED_HOSTS = ["localhost", "0.0.0.0", "127.0.0.1"]
 

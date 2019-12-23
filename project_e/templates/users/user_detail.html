@@ -11,7 +11,7 @@
         {% endif %}
   </div>
 
-  <div> connect to dealer </div> 
+  <a href="{% url 'users:add-dealer' %}"> connect to dealer </a> 
 
 {% if object == request.user %}
 <!-- Action buttons -->

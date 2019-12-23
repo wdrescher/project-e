@@ -1,14 +1,12 @@
-project-e
-=========
+# project-e
 
-Get setup locally: 
---------------------
+## Get setup locally: 
 Install 
- - pgadmin 
- - nodejs
- - python3.7
+ * [ ] pgadmin 
+ * [ ] nodejs
+ * [ ] python3.7
 
-
+```
 $ python3.7 -m venv ./env
 
 $ pip install -r requirements/local.txt
@@ -16,20 +14,21 @@ $ pip install -r requirements/local.txt
 $ createdb project-e -U postgres --password <password>
 
 $ export DATABASE_URL=postgres://postgres:<password>@127.0.0.1:5432/project-e
+```
 
 
-
-
-- https://cookiecutter-django.readthedocs.io/en/latest/developing-locally.html#setting-up-development-environment
+### for more help 
+https://cookiecutter-django.readthedocs.io/en/latest/developing-locally.html#setting-up-development-environment
 
 :License: Apache Software License 2.0
 
 
-Running projcet
+## Running projcet
 --------
 Build using 
-   ``npm run dev``
-
+``` npm i 
+    npm run dev 
+```
 
 Basic Commands
 --------------

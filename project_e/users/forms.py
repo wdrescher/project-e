@@ -1,6 +1,9 @@
+from django import forms as default_form
 from django.contrib.auth import get_user_model, forms
 from django.core.exceptions import ValidationError
 from django.utils.translation import ugettext_lazy as _
+
+from project_e.dealers.models import Dealer
 
 User = get_user_model()
 
@@ -28,3 +31,12 @@ class UserCreationForm(forms.UserCreationForm):
             return username
 
         raise ValidationError(self.error_messages["duplicate_username"])
+
+class UserAddDealerForm(default_form.Form): 
+    dealercode = default_form.CharField()
+
+    def clean_dealercode(self): 
+        dealercode = self.cleaned_data["dealercode"]
+        if not Dealer.objects.get(id=dealercode): 
+            raise forms.ValidationError("You have forgotten about Fred!")
+        return dealercode

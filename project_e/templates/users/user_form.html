@@ -5,6 +5,9 @@
 
 {% block form %}  
   <form class="form-horizontal" method="post" action="{% url 'users:update' %}">
+    {% if form.errors %}
+      form.errors
+    {% endif %}
     {% csrf_token %}
     {{ form|crispy }}
     {% block actions %}       
