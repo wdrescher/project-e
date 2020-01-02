@@ -16,9 +16,17 @@ $ createdb project-e -U postgres --password <password>
 $ export DATABASE_URL=postgres://postgres:<password>@127.0.0.1:5432/project-e
 ```
 
+$ python manage.py migrate
 
+<<<<<<< HEAD:README.md
 ### for more help 
 https://cookiecutter-django.readthedocs.io/en/latest/developing-locally.html#setting-up-development-environment
+=======
+$ python manage.py runserver
+
+
+- https://cookiecutter-django.readthedocs.io/en/latest/developing-locally.html#setting-up-development-environment
+>>>>>>> c5ec1b37b90b4997307e88c456757504b670b342:README.rst
 
 :License: Apache Software License 2.0
 
@@ -26,9 +34,16 @@ https://cookiecutter-django.readthedocs.io/en/latest/developing-locally.html#set
 ## Running projcet
 --------
 Build using 
+<<<<<<< HEAD:README.md
 ``` npm i 
     npm run dev 
 ```
+=======
+   ``npm i``
+   
+   ``npm run dev``
+
+>>>>>>> c5ec1b37b90b4997307e88c456757504b670b342:README.rst
 
 Basic Commands
 --------------
