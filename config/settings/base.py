@@ -43,10 +43,15 @@ LOCALE_PATHS = [ROOT_DIR.path("locale")]
 # https://docs.djangoproject.com/en/dev/ref/settings/#databases
 
 DATABASES = {
-    "default": env.db("DATABASE_URL", default="postgres://localhost/project_e")
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'project_e',
+        'USER': 'postgres',
+        'PASSWORD': '719707',
+        'HOST': '127.0.0.1',
+        'PORT': '5432',
+    }
 }
-DATABASES["default"]["ATOMIC_REQUESTS"] = True
-
 # URLS
 # ------------------------------------------------------------------------------
 # https://docs.djangoproject.com/en/dev/ref/settings/#root-urlconf
