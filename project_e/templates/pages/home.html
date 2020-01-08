@@ -1,1 +1,19 @@
 {% extends "base.html" %}
+{% load static %}
+
+{% block title %} Create dealer {% endblock title %}
+{% block content %}
+<a href="{% url 'dealers:create' %}">Add your dealership to our network</a>
+{% endblock content %}
+
+{% block banner %}
+<div class="banner" alt="logo">
+    <div class="header">Rethink Charging.</div>
+    <div class="banner__container">
+        <button class="banner__button"> Plug In </button> 
+    </div> 
+
+</div> 
+<a href="{% url 'dealers:create' %}">Add your dealership to our network</a>
+{% endblock banner %}
+

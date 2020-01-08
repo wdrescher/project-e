@@ -12,6 +12,7 @@ SECRET_KEY = env(
     "DJANGO_SECRET_KEY",
     default="5tXYdvwhjbC5JTzAdjGk0EVMaNhkWWGzZAGDiH4ZzYynEKr9tIB1xHv47tIDoaQL",
 )
+DJANGO_HASH_SALT = ("DJANGO_HASH_SALT", default = "hash salt")
 # https://docs.djangoproject.com/en/dev/ref/settings/#test-runner
 TEST_RUNNER = "django.test.runner.DiscoverRunner"
 
