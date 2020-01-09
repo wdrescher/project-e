@@ -2,9 +2,6 @@
 {% load static %}
 
 {% block title %} Create dealer {% endblock title %}
-{% block content %}
-<a href="{% url 'dealers:create' %}">Add your dealership to our network</a>
-{% endblock content %}
 
 {% block banner %}
 <div class="banner" alt="logo">
@@ -14,6 +11,34 @@
     </div> 
 
 </div> 
-<a href="{% url 'dealers:create' %}">Add your dealership to our network</a>
 {% endblock banner %}
 
+{% block content %}
+    <div class="messages">
+        <div class="message">
+            <div class="message__icon">
+            </div>
+            <div class="message-body__container">
+                <div class="message-body__title">save time</div>
+                <div class="message-body">
+                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                    exercitation ullamco laboris nisi ut 
+                </div>
+            </div>
+        </div>
+
+        <div class="message">
+            <div class="message-body__container">
+                <div class="message-body__title">circuits are complicated</div>
+                <div class="message-body">
+                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                    exercitation ullamco laboris nisi ut aliqui
+                </div>
+            </div>
+             <div class="message__icon">
+            </div>
+        </div>
+    </div>
+{% endblock content %}
