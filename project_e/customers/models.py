@@ -3,12 +3,12 @@ from django.utils.translation import ugettext_lazy as _
 from django.urls import reverse
 from hashid_field import HashidAutoField
 #from django.contrib.auth.models import User
-from django.contrib.auth.models import User
+#from django.contrib.auth.models import AbstractUser
 
 # Create your models here.
 class Customer(models.Model):
     cust_id = HashidAutoField(primary_key=True, allow_int_lookup=True)
-    salesman = models.ForeignKey(User, blank=True, null=True, on_delete=models.CASCADE)
+    #salesman = models.ForeignKey(AbstractUser, blank=True, null=True, on_delete=models.CASCADE)
     #cont_name = models.CharField(_("Contractor Name"), blank=False, max_length=500)
     cust_email = models.CharField(_("Customer Email"), blank=False, max_length=500)
     address = models.CharField(_("Address"), blank=False, max_length=500)

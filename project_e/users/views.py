@@ -75,7 +75,7 @@ class UserAddDealerView(LoginRequiredMixin, FormView):
     def form_valid(self, form):
         if (not Dealer.objects.get(id=self.request.dealer)):
             return False
-        
+        form.save()
         messages.add_message(
             self.request, messages.INFO, _("Infos successfully updated")
         )
@@ -108,7 +108,7 @@ user_add_contractor_view = UserAddContractorView.as_view()
 class DealerAddCustomerView(LoginRequiredMixin, FormView):
     model = Customer
     fields = ["cust_email", "cust_address", "fname", "lname", "phone", "vin"]
-    template_name = "users/user_form.html"
+    template_name = "users/createcust_form.html"
     form_class = DealerAddCustForm
     
     def get_success_url(self):
@@ -118,8 +118,8 @@ class DealerAddCustomerView(LoginRequiredMixin, FormView):
         return User.objects.get(username=self.request.user.username)
 
     def form_valid(self, form):
-        if (not Customer.objects.get(id=self.request.customer)):
-            return False
+        # if (not Customer.objects.get(id=self.request.customer)):
+        #     return False
         form.save()
         messages.add_message(
             self.request, messages.INFO, _("Customer Info successfully updated")
