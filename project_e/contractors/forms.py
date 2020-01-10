@@ -9,4 +9,3 @@ class ContractorCreationForm(forms.Form):
     lname = forms.CharField()
     phone = forms.CharField()
     notes = forms.CharField()
-

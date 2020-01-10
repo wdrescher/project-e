@@ -9,6 +9,12 @@ from django.utils.translation import ugettext_lazy as _
 from project_e.dealers.models import Dealer
 from project_e.users.forms import UserAddDealerForm
 
+from project_e.contractors.models import Contractor
+from project_e.users.forms import UserAddContractorForm
+
+from project_e.customers.models import Customer
+from project_e.customers.forms import DealerAddCustForm
+
 User = get_user_model()
 
 
@@ -53,7 +59,9 @@ class UserRedirectView(LoginRequiredMixin, RedirectView):
 
 user_redirect_view = UserRedirectView.as_view()
 
-class UserAddDealerView(LoginRequiredMixin, FormView): 
+
+
+class UserAddDealerView(LoginRequiredMixin, FormView):
     model = User
     template_name = "users/user_form.html"
     form_class = UserAddDealerForm
@@ -65,7 +73,7 @@ class UserAddDealerView(LoginRequiredMixin, FormView):
         return User.objects.get(username=self.request.user.username)
 
     def form_valid(self, form):
-        if (not Dealer.objects.get(id=self.request.dealer)): 
+        if (not Dealer.objects.get(id=self.request.dealer)):
             return False
         
         messages.add_message(
@@ -74,3 +82,48 @@ class UserAddDealerView(LoginRequiredMixin, FormView):
         return super().form_valid(form)
     
 user_add_dealer_view = UserAddDealerView.as_view()
+
+class UserAddContractorView(LoginRequiredMixin, FormView):
+    model = User
+    template_name = "users/user_form.html"
+    form_class = UserAddContractorForm
+    
+    def get_success_url(self):
+        return reverse("users:detail", kwargs={"username": self.request.user.username})
+
+    def get_object(self):
+        return User.objects.get(username=self.request.user.username)
+
+    def form_valid(self, form):
+        if (not Contractor.objects.get(id=self.request.contractor)): 
+            return False
+        
+        messages.add_message(
+            self.request, messages.INFO, _("Thanks! Your contractor info was successfully updated")
+        )
+        return super().form_valid(form)
+    
+user_add_contractor_view = UserAddContractorView.as_view()
+
+class DealerAddCustomerView(LoginRequiredMixin, FormView):
+    model = Customer
+    fields = ["cust_email", "cust_address", "fname", "lname", "phone", "vin"]
+    template_name = "users/user_form.html"
+    form_class = DealerAddCustForm
+    
+    def get_success_url(self):
+        return reverse("users:detail", kwargs={"username": self.request.user.username})
+
+    def get_object(self):
+        return User.objects.get(username=self.request.user.username)
+
+    def form_valid(self, form):
+        if (not Customer.objects.get(id=self.request.customer)):
+            return False
+        form.save()
+        messages.add_message(
+            self.request, messages.INFO, _("Customer Info successfully updated")
+        )
+        return super().form_valid(form)
+    
+user_add_customer_view = DealerAddCustomerView.as_view()
