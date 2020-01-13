@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}User: {{ object.username }}{% endblock %}
+
+{% block content %}
+  <div class="container">
+    <h4>Welcome, {{request.user.dealership.name}}</h4>
+    <div>Your link to add new users is: <a href="">{% url 'users:add-dealer' ref_id=request.user.dealership.ref_id.hashid %}</a></div>
+    {% if request.user.dealership.admin == request.user %}
+        {% if user_list %}
+            {% for user in user_list %}
+                <div> user: {{ user.username }} </div>
+                <div> {{user.dealership}} </div>
+                {% if user.verified %}
+                    <a href="{% url 'users:verify' user_id=user.pk %}"><button> Un-Verify </button></a>
+                {% else %}
+                    <a href="{% url 'users:verify' user_id=user.pk%}"><button> Verify </button></a>
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+    {% else %}
+        <div>Sorry only admins can add sales</div>
+    {% endif %}
+  </div>
+{% endblock content %}
+

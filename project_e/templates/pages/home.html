@@ -7,13 +7,19 @@
 <div class="banner" alt="logo">
     <div class="header">Rethink Charging.</div>
     <div class="banner__container">
-        <button class="banner__button"> Plug In </button> 
+        <button class="banner__button">
+        {% if request.user.dealership.admin == request.user %} <a href="{% url 'dealer-network'%}">Manage your dealership</a> 
+        {% elif request.user.sales == true %} <a href=""> Start a job </a>
+        {% else %} Plug In
+        {% endif %}
+         </button> 
     </div> 
 
 </div> 
 {% endblock banner %}
 
 {% block content %}
+    <a href="{% url 'dealer-network'%}"> <button> Add Dealer </button> </a>
     <div class="messages">
         <div class="message">
             <div class="message__icon">

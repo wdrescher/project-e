@@ -9,9 +9,10 @@
         {% if object.name %}
           <p>{{ object.name }}</p>
         {% endif %}
-  </div>
 
-  <a href="{% url 'users:add-dealer' %}"> connect to dealer </a> 
+
+        <div>You're connected to: {{object.dealership}}</div>
+  </div>
 
 {% if object == request.user %}
 <!-- Action buttons -->
