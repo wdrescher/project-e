@@ -219,3 +219,15 @@ ul {
     border: 1px solid black; 
   }
 }
+
+.sales-user { 
+  padding: 10px;  
+  display: flex; 
+  flex-flow: row wrap; 
+  align-content:center; 
+  justify-content: space-between;
+  margin-bottom: 10px; 
+  border: 1px solid gray; 
+  height: 50px; 
+  border-radius: 5px; 
+}

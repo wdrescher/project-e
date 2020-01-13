@@ -11,7 +11,15 @@
         {% endif %}
 
 
-        <div>You're connected to: {{object.dealership}}</div>
+        <div>You're connected to: {{object.dealership.name}}</div>
+
+        {% if request.user.dealership.admin == request.user %} 
+          <a href="{% url 'dealers:verify'%}"><button class="btn btn-primary"> Add an associate </button></a> 
+          <a href="#" class="btn btn-danger">Coming soon: Statistics</a>
+        {% endif %}
+
+        {% if request.user.sales == True %} <a href="" class="btn btn-primary"> Start a job </a>{% endif %}
+
   </div>
 
 {% if object == request.user %}

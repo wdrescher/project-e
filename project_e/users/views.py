@@ -48,23 +48,32 @@ class UserRedirectView(LoginRequiredMixin, RedirectView):
 user_redirect_view = UserRedirectView.as_view()
 
 class UserAddDealerView(LoginRequiredMixin, RedirectView):
-
     def get_redirect_url(self, *args, **kwargs):
         dealer = Dealer.objects.get(ref_id=kwargs['ref_id'])
         self.request.user.dealership = dealer
         self.request.user.sales = True
-        self.request.user.save(update_fields=['dealership', 'sales'])
+        self.request.user.verified= False
+        self.request.user.save(update_fields=['dealership', 'sales', 'verified'])
         return reverse("users:detail", kwargs={"username": self.request.user.username})
 
 user_add_dealer_view = UserAddDealerView.as_view()
 
-class UserVerifyView(LoginRequiredMixin, RedirectView): 
-
+class UserVerifyView(LoginRequiredMixin, RedirectView):
     def get_redirect_url(self, *args, **kwargs):
         user = User.objects.get(id=kwargs['user_id'])
         if user:
             user.verified = not user.verified
             user.save(update_fields=['verified'])
         return  reverse("dealers:verify")
-
 user_verify_view = UserVerifyView.as_view()
+
+class UserRemoveView(LoginRequiredMixin, RedirectView): 
+    def get_redirect_url(self, *args, **kwargs): 
+        user = User.objects.get(id=kwargs["user_id"])
+        user.dealership = None
+        user.verified = False
+        user.sales = False
+        user.save(update_fields=["dealership", "verified", "sales"])
+        return reverse("dealers:verify")
+
+user_remove_view = UserRemoveView.as_view()
