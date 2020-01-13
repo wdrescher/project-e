@@ -35,15 +35,15 @@ class UserCreationForm(forms.UserCreationForm):
 
         raise ValidationError(self.error_messages["duplicate_username"])
 
-class UserAddDealerForm(default_form.Form): 
+class UserAddDealerForm(default_form.Form):
     dealercode = default_form.CharField()
 
-    def clean_dealercode(self): 
+    def clean_dealercode(self):
         dealercode = self.cleaned_data["dealercode"]
         if not Dealer.objects.get(id=dealercode):
             raise forms.ValidationError("You have forgotten about Fred!")
         return dealercode
-        
+
 class UserAddContractorForm(default_form.Form):
     contractorcode = default_form.CharField()
 
@@ -52,22 +52,3 @@ class UserAddContractorForm(default_form.Form):
         if not Contractor.objects.get(id=contractorcode):
             raise forms.ValidationError("You have forgotten about Fred!")
         return contractorcode
-
-# class UserAddCustomerForm(default_form.Form):
-#     DealerAddCustForm()
-
-#     # customercode = default_form.CharField()
-#     # cust_email = forms.CharField()
-#     # cust_address = forms.CharField()
-#     # fname = forms.CharField()
-#     # lname = forms.CharField()
-#     # phone = forms.CharField()
-#     # notes = forms.CharField()
-#     # vin = forms.CharField()
-
-
-#     def clean_contractorcode(self):
-#         customercode = self.cleaned_data["customercode"]
-#         if not Customer.objects.get(id=Customercode):
-#             raise forms.ValidationError("You have forgotten about Fred!")
-#         return Customercode

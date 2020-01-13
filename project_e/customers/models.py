@@ -17,8 +17,10 @@ class Customer(models.Model):
     phone = models.CharField(_("Phone Number"), blank=False, max_length=10)
     notes = models.CharField(_("Misc Notes"), blank=False, max_length=500)
     vin = models.CharField(_("VIN"), blank=False, max_length=50)
+    car_make = models.CharField(_("Car Make"), blank=True, max_length=30)
+    car_model = models.CharField(_("Car Model"), blank=True, max_length=30)
     #dealerid = ..dealers.models.???
     #salesman
 
     def get_absolute_url(self):
-        return reverse("customers:detail", kwargs={"pk": self.cont_id.id})
+        return reverse("customers:detail", kwargs={"pk": self.cust_id.id})

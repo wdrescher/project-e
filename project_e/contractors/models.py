@@ -13,8 +13,8 @@ class Contractor(models.Model):
     lname = models.CharField(_("Last Name"), blank=False, max_length=30)
     phone = models.CharField(_("Phone Number"), blank=False, max_length=10)
     notes = models.CharField(_("Misc Notes"), blank=False, max_length=500)
+    num_installs = models.IntegerField(default=0, blank=True, null=True)
     #car vin? or get that from jobs?
 
     def get_absolute_url(self):
         return reverse("customers:detail", kwargs={"pk": self.cont_id.id})
-

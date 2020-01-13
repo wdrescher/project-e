@@ -15,6 +15,9 @@ from project_e.contractors.forms import ContractorCreationForm
 from project_e.customers.models import Customer
 from project_e.customers.forms import DealerAddCustForm
 
+#from project_e.jobs.models import Job
+#from project_e.jobs.forms import Form
+
 User = get_user_model()
 
 
@@ -65,7 +68,7 @@ class UserAddDealerView(LoginRequiredMixin, FormView):
     model = User
     template_name = "users/user_form.html"
     form_class = UserAddDealerForm
-    
+
     def get_success_url(self):
         return reverse("users:detail", kwargs={"username": self.request.user.username})
 
@@ -73,14 +76,14 @@ class UserAddDealerView(LoginRequiredMixin, FormView):
         return User.objects.get(username=self.request.user.username)
 
     def form_valid(self, form):
-        if (not Dealer.objects.get(id=self.request.dealer)):
+        if not Dealer.objects.get(id=self.request.dealer):
             return False
         form.save()
         messages.add_message(
             self.request, messages.INFO, _("Infos successfully updated")
         )
         return super().form_valid(form)
-    
+
 user_add_dealer_view = UserAddDealerView.as_view()
 
 class UserAddContractorView(LoginRequiredMixin, FormView):
@@ -88,7 +91,6 @@ class UserAddContractorView(LoginRequiredMixin, FormView):
     fields = ["cont_name", "cont_email", "fname", "lname", "phone", "address"]
     template_name = "users/createcont_form.html"
     form_class = ContractorCreationForm
-    
     def get_success_url(self):
         return reverse("users:detail", kwargs={"username": self.request.user.username})
 
@@ -96,14 +98,14 @@ class UserAddContractorView(LoginRequiredMixin, FormView):
         return User.objects.get(username=self.request.user.username)
 
     def form_valid(self, form):
-        # if (not Contractor.objects.get(id=self.request.contractor)): 
+        # if (not Contractor.objects.get(id=self.request.contractor)):
         #     return False
         form.save()
         messages.add_message(
             self.request, messages.INFO, _("Thanks! Your contractor info was successfully updated")
         )
         return super().form_valid(form)
-    
+
 user_add_contractor_view = UserAddContractorView.as_view()
 
 class DealerAddCustomerView(LoginRequiredMixin, FormView):
@@ -111,7 +113,7 @@ class DealerAddCustomerView(LoginRequiredMixin, FormView):
     fields = ["cust_email", "cust_address", "fname", "lname", "phone", "vin"]
     template_name = "users/createcust_form.html"
     form_class = DealerAddCustForm
-    
+
     def get_success_url(self):
         return reverse("users:detail", kwargs={"username": self.request.user.username})
 
@@ -126,5 +128,4 @@ class DealerAddCustomerView(LoginRequiredMixin, FormView):
             self.request, messages.INFO, _("Customer Info successfully updated")
         )
         return super().form_valid(form)
-    
 user_add_customer_view = DealerAddCustomerView.as_view()

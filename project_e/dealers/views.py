@@ -19,7 +19,7 @@ class DealerDetailView(LoginRequiredMixin, DetailView):
 
 class DealerAddCustView(LoginRequiredMixin, CreateView):
     model = Customer
-    fields = ["cust_email", "cust_address", "fname", "lname", "phone", "vin"]
+    fields = ["cust_email", "cust_address", "fname", "lname", "phone", "vin", "car_make", "car_model"]
 
 dealer_detail_view = DealerDetailView.as_view()
 dealer_creation_view = DealerCreationView.as_view()

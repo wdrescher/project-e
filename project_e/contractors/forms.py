@@ -12,3 +12,4 @@ class ContractorCreationForm(forms.ModelForm):
     class Meta:
         model = Contractor
         fields = ('cont_name', 'cont_email', 'fname', 'lname', 'phone', 'address')
+        

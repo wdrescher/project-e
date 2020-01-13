@@ -9,13 +9,5 @@ class Dealer(models.Model):
     address = models.CharField(_("Address"), blank=False, max_length=500)
     name = models.CharField(_("Name"), blank=False, max_length=200)
 
-    def get_absolute_url(self): 
+    def get_absolute_url(self):
         return reverse("dealers:detail", kwargs={"pk": self.ref_id.id})
-
-# class Jobs(models.Model): 
-#     ref_id = HashidAutoField(primary_key=True, allow_int_lookup=True)
-#     install_address = models.CharField(_("Installation Address"), blank=False, max_length=500)
-#     owner_vin = models.CharField(_("Owner VIN"), blank=False, max_length=200)
-
-#     def get_absolute_url(self): 
-#         return reverse("dealers:detail", kwargs={"pk": self.ref_id.id})
