@@ -20,15 +20,13 @@ const rename = require('gulp-rename')
 const sass = require('gulp-sass')
 const spawn = require('child_process').spawn
 const uglify = require('gulp-uglify-es').default
-const concat = require('gulp-concat');
 
 // Relative paths function
 function pathsConfig(appName) {
   this.app = `./${pjson.name}`
   const vendorsRoot = 'node_modules'
 
-  return {
-    
+  return { 
     app: this.app,
     templates: `${this.app}/templates`,
     css: `${this.app}/static/css`,
@@ -113,7 +111,7 @@ function initBrowserSync() {
 
 // Watch
 function watchPaths() {
-  watch(`${paths.sass}/*.scss`, styles)
+  watch(`${paths.sass}/**/**.scss`, styles)
   watch(`${paths.templates}/**/*.html`).on("change", reload)
   watch([`${paths.js}/*.js`, `!${paths.js}/*.min.js`], scripts).on("change", reload)
 }
