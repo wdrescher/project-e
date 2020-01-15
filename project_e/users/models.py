@@ -10,7 +10,7 @@ class User(AbstractUser):
 
     # First Name and Last Name do not cover name patterns
     # around the globe.
-    name = models.CharField(_("Name of User"), blank=True, max_length=255)    
+    name = models.CharField(_("Name of User"), blank=True, max_length=255)
     dealer = models.ForeignKey(Dealer, blank=True, null=True, on_delete=models.CASCADE)
     contractor = models.ForeignKey(Contractor, blank=True, null=True, on_delete=models.CASCADE)
 

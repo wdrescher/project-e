@@ -1,15 +1,16 @@
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 from django.urls import reverse
-from hashid_field import HashidAutoField
+#from hashid_field import HashidAutoField
+#from hashid_field.rest import HashidSerializerCharField
+#from rest_framework import serializers
+#from project_e.dealers.models import Dealer
 #from django.contrib.auth.models import User
-#from django.contrib.auth.models import AbstractUser
+#from django.contrib.auth.models import AbstractUsera
 
 # Create your models here.
 class Customer(models.Model):
-    cust_id = HashidAutoField(primary_key=True, allow_int_lookup=True)
-    #salesman = models.ForeignKey(AbstractUser, blank=True, null=True, on_delete=models.CASCADE)
-    #cont_name = models.CharField(_("Contractor Name"), blank=False, max_length=500)
+    cust_id = models.AutoField(primary_key=True)
     cust_email = models.CharField(_("Customer Email"), blank=False, max_length=500)
     address = models.CharField(_("Address"), blank=False, max_length=500)
     fname = models.CharField(_("First Name"), blank=False, max_length=30)
@@ -23,4 +24,4 @@ class Customer(models.Model):
     #salesman
 
     def get_absolute_url(self):
-        return reverse("customers:detail", kwargs={"pk": self.cust_id.id})
+        return reverse("customers:detail", kwargs={"pk": self.cust_id})

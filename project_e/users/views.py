@@ -15,6 +15,8 @@ from project_e.contractors.forms import ContractorCreationForm
 from project_e.customers.models import Customer
 from project_e.customers.forms import DealerAddCustForm
 
+from project_e.jobs.models import Job
+
 #from project_e.jobs.models import Job
 #from project_e.jobs.forms import Form
 
@@ -110,7 +112,7 @@ user_add_contractor_view = UserAddContractorView.as_view()
 
 class DealerAddCustomerView(LoginRequiredMixin, FormView):
     model = Customer
-    fields = ["cust_email", "cust_address", "fname", "lname", "phone", "vin"]
+    fields = ["cust_email", "cust_address", "fname", "lname", "phone", "vin", "car_make", "car_model", "cust_id"]
     template_name = "users/createcust_form.html"
     form_class = DealerAddCustForm
 
@@ -123,7 +125,15 @@ class DealerAddCustomerView(LoginRequiredMixin, FormView):
     def form_valid(self, form):
         # if (not Customer.objects.get(id=self.request.customer)):
         #     return False
-        form.save()
+        # form.save(commit=False)
+        # j = Customer.cust_id
+        # jo = Job(cust_id=j)
+        # j.save()
+        thing = form.save()
+        #c = form.cust_id
+        Job.objects.create(cust_id=thing.cust_id)
+
+
         messages.add_message(
             self.request, messages.INFO, _("Customer Info successfully updated")
         )

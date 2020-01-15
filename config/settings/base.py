@@ -83,7 +83,8 @@ LOCAL_APPS = [
     "project_e.users.apps.UsersConfig",
     "project_e.dealers.apps.DealersConfig",
     "project_e.contractors.apps.ContractorsConfig",
-    "project_e.customers.apps.CustomersConfig"
+    "project_e.customers.apps.CustomersConfig",
+    "project_e.jobs.apps.JobsConfig"
     # Your stuff: custom apps go here
 ]
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
