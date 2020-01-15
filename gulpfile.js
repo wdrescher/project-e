@@ -20,6 +20,7 @@ const rename = require('gulp-rename')
 const sass = require('gulp-sass')
 const spawn = require('child_process').spawn
 const uglify = require('gulp-uglify-es').default
+const concat = require('gulp-concat');
 
 // Relative paths function
 function pathsConfig(appName) {
@@ -55,17 +56,15 @@ function styles() {
       cssnano({ preset: 'default' })   // minify result
   ]
 
-  return src(`${paths.sass}/project.scss`)
-    .pipe(sass({
-      includePaths: [
-        
-        paths.sass
-      ]
-    }).on('error', sass.logError))
+  return src(`${paths.sass}/**/**.scss`)
+      .pipe(sass({
+        includePaths: [
+          
+          paths.sass
+        ]
+      }).on('error', sass.logError))
     .pipe(plumber()) // Checks for errors
     .pipe(postcss(processCss))
-    .pipe(dest(paths.css))
-    .pipe(rename({ suffix: '.min' }))
     .pipe(postcss(minifyCss)) // Minifies the result
     .pipe(dest(paths.css))
 }
