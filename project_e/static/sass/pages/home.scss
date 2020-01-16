@@ -1,60 +1,180 @@
-.home-page__banner {
-  display: flex; 
-  flex-flow: column wrap; 
-  background: url(/static/images/icons/image.svg) no-repeat center center fixed; 
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: 50% 50%;
-  min-width: 1024px;
-  width: 100%;
-  height: 90%;
-  z-index: -1;
+$button-height: 50px; 
+$icon-size: 200px; 
+$features-icon-size: 83px; 
+$demo-blue: #DCF0F1; 
+$demo-green: #DFF5D5; 
 
-  position: relative;
-  top: 10;
-  left: 0;
+.home-page {
+  &__form {    
+    display: flex; 
+    justify-content: center; 
 
-  box-shadow: 0px 5px 8px lightgray; 
+    &-container { 
+      flex-grow: 2; 
+      margin: 40px auto; 
+      display: flex; 
+      flex-flow: row; 
+      width: 100%; 
+    }
 
-  &__button {
+    &-input { 
+      width: 100%;
+      max-width: 350px;  
+      height: $button-height; 
+      color: black; 
+      border: 0px solid white; 
+    }
+
+    &-button { 
+      font-family: 'Calibre Test', 'Helvetica';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 19px;
+      height: $button-height; 
+      width: 200px; 
+      background: black; 
+      color: white; 
+      border: 0px solid white; 
+      text-transform: uppercase;
+    }
+  }
+
+  &__banner {
+    display: flex; 
+    flex-flow: column wrap; 
+    background: url(/static/images/icons/image.svg) no-repeat center center fixed; 
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: 50% 50%;
+    min-width: 1024px;
+    width: 100%;
+    height: 90%;
+    z-index: -1;
+  
+    position: relative;
+    top: 10;
+    left: 0;
+  
+    box-shadow: 0px 5px 8px lightgray;
+  }
+
+  &__header {
+    @media screen and (max-width: 400px) {
+      font-size: 60px; 
+    }
+    font-size: 80px; 
+    color: white;
     font-family: "Helvetica";
-    color: white; 
-    align-content: flex-end; 
-    width: 200px; 
-    height: 60px; 
-    border-radius: 10px; 
-    border: 4px solid white; 
-    margin: 30px; 
-    background: transparent; 
-    text-transform: uppercase;
-    font-weight: 100; 
+    font-style: oblique; 
+    font-weight: 100;  
+    flex-grow: 1; 
+    display: flex; 
+    flex-direction: row;
+    justify-content: center; 
+    align-items: flex-end; 
   }
 
-  &__button:hover {
-    border-radius: 10px; 
+
+
+  &-works {
+    width: 100%;
+
+    &__header { 
+      font-family: "Helvetica";
+      width: 100%; 
+      text-align: center;
+      font-size: 32px; 
+      margin: 130px auto 60px; 
+      color: black; 
+    }
+
+    &__container {
+      display: flex; 
+      flex-flow: row-wrap; 
+      width: 100%; 
+      justify-content: space-evenly;
+      align-items: center;
+      margin: auto auto 130px; 
+    }
+
+    &__item { 
+      width: 100%; 
+    }
+
+    &__icon { 
+      display: flex; 
+      flex-flow: row wrap;
+      justify-content: center;
+      align-items: center;
+      color: white; 
+      font-size: 40px; 
+      background-color: $demo-blue; 
+      width: $icon-size; 
+      height: $icon-size; 
+      border-radius: $icon-size;
+      margin: auto; 
+    }
+
+    &__title {
+      margin: 10px auto; 
+      font-size: 16px;
+      font-weight: 500; 
+      text-align: center;
+    }
+
+    &__body {
+      margin: auto; 
+      width: 80%; 
+      font-size: 14px; 
+      text-align: center; 
+    }
   }
 
-  &__container { 
-    flex-grow: 3; 
-    display: flex;
-    align-items: flex-end;
-    flex-flow: row-reverse;
+  &-features { 
+    display: flex; 
+    flex-flow: column wrap; 
+    align-content: center;
+    width: 100%; 
+    height: 800px; 
+    background-color: $demo-green;
+
+    &__row {
+      display: flex; 
+      flex-flow: row wrap; 
+      align-content: center;
+      justify-content: center;
+    }
+
+    &__blurb {
+      margin: 20px; 
+      display: flex; 
+      flex-flow: row wrap; 
+      align-content: center;
+      justify-content: center;
+    }
+
+    &__icon {
+      background-color: black; 
+      border-radius: $features-icon-size; 
+      width: $features-icon-size; 
+      height: $features-icon-size; 
+      margin-right: 10px;  
+    }
+
+    &__text {
+
+      max-width: 330px; 
+      display: flex; 
+      flex-flow: column wrap; 
+      align-content: flex-start;
+    }
+    
+    &__header {
+      @extend .home-page-works__header; 
+    }
   }
 }
+  
 
-.header {
-  @media screen and (max-width: 400px) {
-    font-size: 60px; 
-  }
-  font-size: 80px; 
-  color: white;
-  font-family: "Helvetica";
-  font-style: oblique; 
-  font-weight: 100;  
-  flex-grow: 1; 
-  display: flex; 
-  flex-direction: row;
-  justify-content: center; 
-  align-items: flex-end; 
-}

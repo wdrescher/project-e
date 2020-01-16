@@ -7,41 +7,84 @@
 
 {% block banner %}
 <div class="home-page__banner" alt="logo">
-    <div class="header">Rethink Charging.</div>
-    <div class="home-page__banner__container">
-        <button class="home-page__banner__button"> Plug In </button> 
+    <div class="home-page__header">Rethink Charging.</div>
+    <div class="home-page__form-container"> 
+        <form class="home-page__form"> 
+            <input type="text" class="home-page__form-input">
+            <button type="submit" class="home-page__form-button"> Schedule Demo </button> 
+        </form>
     </div> 
 
 </div> 
-{% endblock banner %}
 
-{% block content %}
-    <a href="{% url 'dealer-network'%}"> <button> Add Dealer </button> </a>
-    <div class="messages">
-        <div class="message">
-            <div class="message__icon">
-            </div>
-            <div class="message-body__container">
-                <div class="message-body__title">save time</div>
-                <div class="message-body">
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
-                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                    exercitation ullamco laboris nisi ut 
-                </div>
-            </div>
+<div class="home-page-works"> 
+    <div class="home-page-works__header">How It Works</div>
+    <div class="home-page-works__container">
+        <div class="home-page-works__item">
+            <div class="home-page-works__icon">1</div>
+            <div class="home-page-works__title">Customer Purchases Car</div>
+            <div class="home-page-works__body">Maecenas ligula nisi, sodales sed nibh id, hendrerit commodo magna. Duis a lorem ut tellus dictum.</div> 
         </div>
 
-        <div class="message">
-            <div class="message-body__container">
-                <div class="message-body__title">circuits are complicated</div>
-                <div class="message-body">
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
-                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                    exercitation ullamco laboris nisi ut aliqui
-                </div>
-            </div>
-             <div class="message__icon">
-            </div>
+        <div class="home-page-works__item">
+            <div class="home-page-works__icon">2</div>
+            <div class="home-page-works__title">We Send Our Electrician</div>
+            <div class="home-page-works__body">Maecenas ligula nisi, sodales sed nibh id, hendrerit commodo magna. Duis a lorem ut tellus dictum.</div> 
+        </div>
+
+        <div class="home-page-works__item">
+            <div class="home-page-works__icon">3</div>
+            <div class="home-page-works__title">Eletric Charger Installed</div>
+            <div class="home-page-works__body">Maecenas ligula nisi, sodales sed nibh id, hendrerit commodo magna. Duis a lorem ut tellus dictum.</div> 
         </div>
     </div>
-{% endblock content %}
+</div> 
+
+<div class="home-page-features">
+    <div class="home-page-features__header">Platform Feautures</div>
+    <div class="home-page-features__row">
+        <div class="home-page-features__blurb">
+            <div class="home-page-features__icon"></div>
+            <div class="home-page-features__text">Praesent sit amet ultriceS
+
+                    Aliquam non sodales nisl. Suspendisse varius mattis turpis, blandit tincidunt leo rhoncus nec.</div>
+        </div>
+        <div class="home-page-features__blurb">
+            <div class="home-page-features__icon"></div>
+            <div class="home-page-features__text">Praesent sit amet ultriceS
+
+                    Aliquam non sodales nisl. Suspendisse varius mattis turpis, blandit tincidunt leo rhoncus nec.</div>
+        </div>
+    </div>
+
+    <div class="home-page-features__row">
+        <div class="home-page-features__blurb">
+            <div class="home-page-features__icon"></div>
+            <div class="home-page-features__text">Praesent sit amet ultriceS
+
+                    Aliquam non sodales nisl. Suspendisse varius mattis turpis, blandit tincidunt leo rhoncus nec.</div>
+        </div>
+        <div class="home-page-features__blurb">
+            <div class="home-page-features__icon"></div>
+            <div class="home-page-features__text">Praesent sit amet ultriceS
+
+                    Aliquam non sodales nisl. Suspendisse varius mattis turpis, blandit tincidunt leo rhoncus nec.</div>
+        </div>
+    </div>
+
+        <div class="home-page-features__row">
+            <div class="home-page-features__blurb">
+                <div class="home-page-features__icon"></div>
+                <div class="home-page-features__text">Praesent sit amet ultriceS
+    
+                        Aliquam non sodales nisl. Suspendisse varius mattis turpis, blandit tincidunt leo rhoncus nec.</div>
+            </div>
+            <div class="home-page-features__blurb">
+                <div class="home-page-features__icon"></div>
+                <div class="home-page-features__text">Praesent sit amet ultriceS
+    
+                        Aliquam non sodales nisl. Suspendisse varius mattis turpis, blandit tincidunt leo rhoncus nec.</div>
+            </div>
+        </div>
+</div>
+{% endblock banner %}
