@@ -284,3 +284,5 @@ project_e/media/
 .pytest_cache/
 
 ./tcl/
+
+project_e/static/css
