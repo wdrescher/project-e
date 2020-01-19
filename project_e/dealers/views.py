@@ -30,7 +30,7 @@ class DealerVerifyView(LoginRequiredMixin, ListView):
 
     def get_context_data(self, *args, **kwargs):
         context = super(DealerVerifyView, self).get_context_data(*args, **kwargs)
-        context['url'] = self.request.build_absolute_uri(reverse('users:add-dealer', kwargs={'ref_id':self.request.user.dealership.ref_id.hashid}))
+        context['url'] = self.request.build_absolute_uri(reverse('users:add-dealer', kwargs={'ref_id':self.request.user.dealership.id}))
         context['verified'] = context["user_list"].filter(verified=True)
         context['unverified'] = context["user_list"].filter(verified=False)
         return context

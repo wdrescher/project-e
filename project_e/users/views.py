@@ -72,7 +72,9 @@ class DealerAddCustomerView(LoginRequiredMixin, FormView):
 
     def form_valid(self, form):
         j = form.save()
+        # u = Customer.(vin=j.vin, cust_id=j.id)
         Job.objects.create(cust_id=j.id)
+        # Job.objects.create(cust_id=u)
 
 
         messages.add_message(
@@ -105,7 +107,7 @@ user_add_contractor_view = UserAddContractorView.as_view()
 
 class UserAddDealerView(LoginRequiredMixin, RedirectView):
     def get_redirect_url(self, *args, **kwargs):
-        dealer = Dealer.objects.get(ref_id=kwargs['ref_id'])
+        dealer = Dealer.objects.get(id=kwargs['ref_id'])
         self.request.user.dealership = dealer
         self.request.user.sales = True
         self.request.user.verified = False

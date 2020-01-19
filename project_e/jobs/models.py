@@ -9,8 +9,8 @@ from project_e.contractors.models import Contractor
 
 class Job(models.Model):
     #job_id = models.AutoField(primary_key=True)
-    #cust_id = models.IntegerField(default=0)
-    cust_id = models.ForeignKey(Customer, blank=True, null=True, on_delete=models.CASCADE)
+    cust_id = models.IntegerField(default=0)
+    #cust_id = models.ForeignKey(Customer, blank=True, null=True, on_delete=models.CASCADE)
     dealer_id = models.ForeignKey(Dealer, blank=True, null=True, on_delete=models.CASCADE)
     #salesman_id = models.IntegerField()
     cont_id = models.ForeignKey(Contractor, blank=True, null=True, on_delete=models.CASCADE)
