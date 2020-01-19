@@ -10,8 +10,8 @@ from django.urls import reverse
 
 # Create your models here.
 class Customer(models.Model):
-    cust_id = models.AutoField(primary_key=True)
-    cust_email = models.CharField(_("Customer Email"), blank=False, max_length=500)
+    #cust_id = models.AutoField(primary_key=True)
+    email = models.EmailField(_("Customer Email"), blank=False, null=True)
     address = models.CharField(_("Address"), blank=False, max_length=500)
     fname = models.CharField(_("First Name"), blank=False, max_length=30)
     lname = models.CharField(_("Last Name"), blank=False, max_length=30)
@@ -20,8 +20,7 @@ class Customer(models.Model):
     vin = models.CharField(_("VIN"), blank=False, max_length=50)
     car_make = models.CharField(_("Car Make"), blank=True, max_length=30)
     car_model = models.CharField(_("Car Model"), blank=True, max_length=30)
-    #dealerid = ..dealers.models.???
-    #salesman
+    #salesman and dealer_id can be joined in the jobs table
 
     def get_absolute_url(self):
-        return reverse("customers:detail", kwargs={"pk": self.cust_id})
+        return reverse("customers:detail", kwargs={"pk": self.id})

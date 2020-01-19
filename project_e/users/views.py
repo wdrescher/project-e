@@ -123,15 +123,8 @@ class DealerAddCustomerView(LoginRequiredMixin, FormView):
         return User.objects.get(username=self.request.user.username)
 
     def form_valid(self, form):
-        # if (not Customer.objects.get(id=self.request.customer)):
-        #     return False
-        # form.save(commit=False)
-        # j = Customer.cust_id
-        # jo = Job(cust_id=j)
-        # j.save()
-        thing = form.save()
-        #c = form.cust_id
-        Job.objects.create(cust_id=thing.cust_id)
+        j = form.save()
+        Job.objects.create(cust_id=j.id)
 
 
         messages.add_message(

@@ -5,7 +5,7 @@ from django.urls import reverse
 
 # Create your models here.
 class Dealer(models.Model):
-    ref_id = models.AutoField(primary_key=True)
+    #ref_id = models.AutoField(primary_key=True)
     address = models.CharField(_("Address"), blank=False, max_length=500)
     name = models.CharField(_("Name"), blank=False, max_length=200)
 
@@ -13,4 +13,4 @@ class Dealer(models.Model):
         return self.ref_id
 
     def get_absolute_url(self):
-        return reverse("dealers:detail", kwargs={"pk": self.ref_id})
+        return reverse("dealers:detail", kwargs={"pk": self.id})

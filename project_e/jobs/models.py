@@ -1,19 +1,16 @@
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 from django.urls import reverse
-#from hashid_field import HashidAutoField
 from project_e.customers.models import Customer
 from project_e.dealers.models import Dealer
 from project_e.contractors.models import Contractor
 
-#import customer as OneToOneField (1:1)
-#import dealer as foreign key (Many:1)
 
 
 class Job(models.Model):
-    job_id = models.AutoField(primary_key=True)
-    #cust_id = models.OneToOneField(Customer, blank=True, null=True, on_delete=models.CASCADE)
-    cust_id = models.IntegerField(default=0)
+    #job_id = models.AutoField(primary_key=True)
+    #cust_id = models.IntegerField(default=0)
+    cust_id = models.ForeignKey(Customer, blank=True, null=True, on_delete=models.CASCADE)
     dealer_id = models.ForeignKey(Dealer, blank=True, null=True, on_delete=models.CASCADE)
     #salesman_id = models.IntegerField()
     cont_id = models.ForeignKey(Contractor, blank=True, null=True, on_delete=models.CASCADE)
@@ -25,4 +22,4 @@ class Job(models.Model):
     pref_inst_day3 = models.DateTimeField(_("Preferred Installation Time 3"), blank=True, null=True)
 
     def get_absolute_url(self):
-        return reverse("jobs:detail", kwargs={"pk": self.job_id})
+        return reverse("jobs:detail", kwargs={"pk": self.id})
