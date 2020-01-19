@@ -13,7 +13,7 @@ class Dealer(models.Model):
     admin = models.ForeignKey(settings.AUTH_USER_MODEL, null=True, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.ref_id
+        return str(self.id)
 
     def get_absolute_url(self):
         return reverse("dealers:detail", kwargs={"pk": self.id})
