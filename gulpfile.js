@@ -26,12 +26,11 @@ function pathsConfig(appName) {
   this.app = `./${pjson.name}`
   const vendorsRoot = 'node_modules'
 
-  return {
-    
+  return { 
     app: this.app,
     templates: `${this.app}/templates`,
     css: `${this.app}/static/css`,
-    sass: `${this.app}/static/sass`,
+    sass: `${this.app}/static/sass/**/**`,
     fonts: `${this.app}/static/fonts`,
     images: `${this.app}/static/images`,
     js: `${this.app}/static/js`,
@@ -55,17 +54,15 @@ function styles() {
       cssnano({ preset: 'default' })   // minify result
   ]
 
-  return src(`${paths.sass}/project.scss`)
-    .pipe(sass({
-      includePaths: [
-        
-        paths.sass
-      ]
-    }).on('error', sass.logError))
+  return src(`${paths.sass}.scss`)
+      .pipe(sass({
+        includePaths: [
+          
+          paths.sass
+        ]
+      }).on('error', sass.logError))
     .pipe(plumber()) // Checks for errors
     .pipe(postcss(processCss))
-    .pipe(dest(paths.css))
-    .pipe(rename({ suffix: '.min' }))
     .pipe(postcss(minifyCss)) // Minifies the result
     .pipe(dest(paths.css))
 }
@@ -114,7 +111,7 @@ function initBrowserSync() {
 
 // Watch
 function watchPaths() {
-  watch(`${paths.sass}/*.scss`, styles)
+  watch(`${paths.sass}.scss`, styles)
   watch(`${paths.templates}/**/*.html`).on("change", reload)
   watch([`${paths.js}/*.js`, `!${paths.js}/*.min.js`], scripts).on("change", reload)
 }

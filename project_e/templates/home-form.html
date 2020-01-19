@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% load i18n %}
+{% load crispy_forms_tags %}
+
+{% block scss %} {% static 'css/pages/home-form.css' %} {% endblock scss %}
+
+
+{% block banner %}
+  <div class="banner">
+    <div class="home-form__container"> 
+        <div class="home-form__title">
+            {% block form_title %}Welcome back{% endblock %}
+        </div>
+        <div class="home-form__form">
+            {% block form %}
+
+            {% endblock form %}
+        </div> 
+        <div class="home-form__sub-message">
+            {% block sub_message %}{% endblock %} 
+        </div>
+    </div> 
+  </div> 
+{% endblock banner %}
+
+
+

@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %} Create dealer {% endblock title %}
+
+{% block banner %}
+<div class="banner" alt="logo">
+    <div class="header">Join our network.</div>
+    <div class="dealer-banner__container">
+        <a href="{% url 'dealers:create' %}"><button class="banner__button"> Add Dealer </button></a>
+    </div> 
+
+</div> 
+{% endblock banner %}

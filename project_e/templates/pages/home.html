@@ -2,6 +2,97 @@
 {% load static %}
 
 {% block title %} Create dealer {% endblock title %}
-{% block content %}
-<a href="{% url 'dealers:create' %}">Add your dealership to our network</a>
-{% endblock content %}
+
+{% block scss %} {% static 'css/pages/home.css' %} {% endblock scss%}
+
+{% block banner %}
+<div class="banner" alt="logo">
+    <div class="home-page__header">Rethink Charging.</div>
+    <div class="home-page__form-container"> 
+        <form class="home-page__form"> 
+            <input type="text" class="home-page__form-input" placeholder="Email Address">
+            <button type="submit" class="home-page__button"> Schedule Demo </button> 
+        </form>
+    </div> 
+
+</div> 
+
+<div class="home-page-works"> 
+    <div class="home-page-works__header">How It Works</div>
+    <div class="home-page-works__container">
+        <div class="home-page-works__item">
+            <div class="home-page-works__icon">1</div>
+            <div class="home-page-works__title">Customer Purchases Car</div>
+            <div class="home-page-works__body">Maecenas ligula nisi, sodales sed nibh id, hendrerit commodo magna. Duis a lorem ut tellus dictum.</div> 
+        </div>
+
+        <div class="home-page-works__item">
+            <div class="home-page-works__icon">2</div>
+            <div class="home-page-works__title">We Send Our Electrician</div>
+            <div class="home-page-works__body">Maecenas ligula nisi, sodales sed nibh id, hendrerit commodo magna. Duis a lorem ut tellus dictum.</div> 
+        </div>
+
+        <div class="home-page-works__item">
+            <div class="home-page-works__icon">3</div>
+            <div class="home-page-works__title">Eletric Charger Installed</div>
+            <div class="home-page-works__body">Maecenas ligula nisi, sodales sed nibh id, hendrerit commodo magna. Duis a lorem ut tellus dictum.</div> 
+        </div>
+    </div>
+</div> 
+
+<div class="home-page-features">
+    <div class="home-page-features__header">Platform Feautures</div>
+    <div class="home-page-features__row">
+        <div class="home-page-features__blurb">
+            <div class="home-page-features__icon"></div>
+            <div class="home-page-features__text">Praesent sit amet ultriceS
+
+                    Aliquam non sodales nisl. Suspendisse varius mattis turpis, blandit tincidunt leo rhoncus nec.</div>
+        </div>
+        <div class="home-page-features__blurb">
+            <div class="home-page-features__icon"></div>
+            <div class="home-page-features__text">Praesent sit amet ultriceS
+
+                    Aliquam non sodales nisl. Suspendisse varius mattis turpis, blandit tincidunt leo rhoncus nec.</div>
+        </div>
+    </div>
+
+    <div class="home-page-features__row">
+        <div class="home-page-features__blurb">
+            <div class="home-page-features__icon"></div>
+            <div class="home-page-features__text">Praesent sit amet ultriceS
+
+                    Aliquam non sodales nisl. Suspendisse varius mattis turpis, blandit tincidunt leo rhoncus nec.</div>
+        </div>
+        <div class="home-page-features__blurb">
+            <div class="home-page-features__icon"></div>
+            <div class="home-page-features__text">Praesent sit amet ultriceS
+
+                    Aliquam non sodales nisl. Suspendisse varius mattis turpis, blandit tincidunt leo rhoncus nec.</div>
+        </div>
+    </div>
+
+    <div class="home-page-features__row">
+        <div class="home-page-features__blurb">
+            <div class="home-page-features__icon"></div>
+            <div class="home-page-features__text">Praesent sit amet ultriceS
+
+                    Aliquam non sodales nisl. Suspendisse varius mattis turpis, blandit tincidunt leo rhoncus nec.</div>
+        </div>
+        <div class="home-page-features__blurb">
+            <div class="home-page-features__icon"></div>
+            <div class="home-page-features__text">Praesent sit amet ultriceS
+
+                    Aliquam non sodales nisl. Suspendisse varius mattis turpis, blandit tincidunt leo rhoncus nec.</div>
+        </div>
+    </div>
+</div>
+
+<div class="home-page-footer"> 
+    <div class="home-page-footer__message">
+            Maecenas ligula nisi, sodales sed nibh id, hendrerit commodo magna. Duis a lorem ut tellus dictum.
+    </div>
+
+    <div class="home-page__button">Contact Us</div>
+</div>
+{% endblock banner %}

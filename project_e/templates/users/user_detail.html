@@ -9,11 +9,18 @@
         {% if object.name %}
           <p>{{ object.name }}</p>
         {% endif %}
-  </div>
 
-  <a href="{% url 'users:add-dealer' %}"> connect to dealer </a> 
-  <a href="{% url 'users:add-contractor' %}"> connect to contractor </a>
-  <a href="{% url 'users:add-customer' %}"> Add a customer! </a>
+
+        <div>You're connected to: {{object.dealership.name}}</div>
+
+        {% if request.user.dealership.admin == request.user %} 
+          <a href="{% url 'dealers:verify'%}"><button class="btn btn-primary"> Add an associate </button></a> 
+          <a href="#" class="btn btn-danger">Coming soon: Statistics</a>
+        {% endif %}
+
+        {% if request.user.sales == True %} <a href="{% url 'users:add-customer' %}" class="btn btn-primary"> Add a customer and start their job </a>{% endif %}
+
+  </div>
 
 {% if object == request.user %}
 <!-- Action buttons -->
