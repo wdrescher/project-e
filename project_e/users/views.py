@@ -72,13 +72,11 @@ class DealerAddCustomerView(LoginRequiredMixin, FormView):
 
     def form_valid(self, form):
         j = form.save()
-        # u = Customer.(vin=j.vin, cust_id=j.id)
+        #print(User.objects.get(self.request.dealership_id))
         Job.objects.create(cust_id=j.id)
-        # Job.objects.create(cust_id=u)
-
 
         messages.add_message(
-            self.request, messages.INFO, _("Customer Info successfully updated")
+            self.request, messages.INFO, _("Customer Info successfully updated and job started")
         )
         return super().form_valid(form)
 user_add_customer_view = DealerAddCustomerView.as_view()

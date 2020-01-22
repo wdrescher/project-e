@@ -1,10 +1,10 @@
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 from django.urls import reverse
+from datetime import datetime
 from project_e.customers.models import Customer
 from project_e.dealers.models import Dealer
 from project_e.contractors.models import Contractor
-from datetime import datetime
 
 
 
